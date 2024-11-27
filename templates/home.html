@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FWI Prediction</title>
+    <!-- Inline CSS -->
+    <style>
+        /* Global Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        /* Styling the Main Container */
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        /* Heading Styling */
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        /* Form Input Fields */
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1em;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #2575fc;
+            box-shadow: 0 0 8px rgba(37, 117, 252, 0.6);
+        }
+
+        /* Button Styling */
+        button {
+            width: 100%;
+            padding: 14px;
+            background-color: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #6a11cb;
+        }
+
+        /* Result Text */
+        h2 {
+            font-size: 1.5em;
+            color: #333;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            input[type="text"] {
+                font-size: 0.9em;
+            }
+
+            button {
+                font-size: 1em;
+            }
+
+            .login-container {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>FWI Prediction</h1>
+
+        <!-- Form to get input data for prediction -->
+        <form action="{{ url_for('predict_datapoint') }}" method="POST">
+            <input type="text" name="Temperature" placeholder="Temperature (°C)" required /><br>
+            <input type="text" name="RH" placeholder="Relative Humidity (%)" required /><br>
+            <input type="text" name="Ws" placeholder="Wind Speed (km/h)" required /><br>
+            <input type="text" name="Rain" placeholder="Rainfall (mm)" required /><br>
+            <input type="text" name="FFMC" placeholder="Fine Fuel Moisture Content" required /><br>
+            <input type="text" name="DMC" placeholder="Duff Moisture Content" required /><br>
+            <input type="text" name="ISI" placeholder="Initial Spread Index" required /><br>
+            <input type="text" name="Classes" placeholder="Fire Class" required /><br>
+            <input type="text" name="Region" placeholder="Region ID" required /><br>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        <!-- Display Prediction Result -->
+        <h2>THE FWI prediction is: {{ results }}</h2>
+    </div>
+</body>
+</html>

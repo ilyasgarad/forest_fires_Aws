@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FWI Prediction - Home</title>
+    <style>
+        /* Global Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            margin: 0;
+            padding: 0;
+            color: #212529;
+        }
+
+        /* Container Styling */
+        .home-container {
+            padding: 40px 80px;
+            max-width: 1200px;
+            margin: auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Heading */
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            color: #495057;
+            margin-bottom: 20px;
+        }
+
+        /* Paragraph Text */
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #343a40;
+        }
+
+        /* Parameter List */
+        .parameter-list {
+            margin-top: 20px;
+            padding-left: 20px;
+        }
+
+        .parameter-list li {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #495057;
+        }
+
+        /* Button Styling */
+        button {
+            display: block;
+            width: 200px;
+            padding: 12px;
+            margin: 20px auto 0;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Media Query for Smaller Screens */
+        @media (max-width: 768px) {
+            .home-container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p, .parameter-list li {
+                font-size: 1rem;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="home-container">
+        <h1>Welcome to Forest Fire Weather Estimator</h1>
+        <p>Welcome to the Forest Fire Weather Index (FWI) Prediction Tool. This tool utilizes data from the Algerian Forest Fire dataset to predict fire risk based on several weather and environmental factors.</p>
+
+        <p>The Forest Fire Weather Index (FWI) is a key measure used to estimate the risk of forest fires. Below, you’ll find a brief explanation of the parameters required for prediction:</p>
+
+        <ul class="parameter-list">
+            <li><strong>Temperature (°C):</strong> The air temperature in degrees Celsius.</li>
+            <li><strong>Relative Humidity (RH, %):</strong> The percentage of moisture in the air.</li>
+            <li><strong>Wind Speed (Ws, km/h):</strong> The speed of the wind in kilometers per hour.</li>
+            <li><strong>Rainfall (mm):</strong> The amount of rain in millimeters.</li>
+            <li><strong>Fine Fuel Moisture Content (FFMC):</strong> Moisture level in fine fuels like grass or leaves.</li>
+            <li><strong>Duff Moisture Content (DMC):</strong> Moisture content in decomposing organic matter.</li>
+            <li><strong>Initial Spread Index (ISI):</strong> A measure of how quickly a fire might spread.</li>
+            <li><strong>Classes:</strong> A categorical indicator of fire intensity/type.</li>
+            <li><strong>Region:</strong> The geographical area being considered.</li>
+        </ul>
+
+        <button onclick="window.location.href='/predictdata'">Go to Predict</button>
+    </div>
+</body>
+</html>
